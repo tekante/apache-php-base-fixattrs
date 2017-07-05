@@ -1,0 +1,12 @@
+version: '3.2'
+services:
+  www:
+    container_name: fixattrs_web
+    image: outrigger/apache-php-base:latest
+    network_mode: bridge
+    labels:
+      com.dnsdock.name: www
+      com.dnsdock.image: fixattrs
+    volumes:
+      - .:/var/www
+      - /data/fixattrs/files:/var/www/html/sites/default/files
